@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "dist/app.js": "17eb97bb54b04bfb05422a90c1d7581c832ae5496a3c57049c78a173a0ca8565",
+    "dist/config.js": "8aff4f3e5f5c51e65e383edf776cd228326db2a4c6db691dbb3f4a97109dd4aa",
+    "dist/core.js": "57dcb73fdf4873ea4db5dd4d412b0435e8e0f4acddbece35bfe828214874662f",
+    "dist/vendor/wallet-standard.js": "d5c64fcef92c1cc8a7f40acc09e3774182d2f8a9dc27c8c4c9b7b9bcea525d18",
+    "dist/wallet.js": "56ca29ec9fabc5b56b42f70eead494b33d45354568c6247521027586d1c96767"
+  },
+  "bundle": "b4a4b158bed90afb92f0da269473e8a3b6642796128b99c607956af0736f4e0c"
+}

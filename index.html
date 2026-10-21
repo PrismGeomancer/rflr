@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F4F0EA" />
+  <title>RAFFLER — Every wallet has a shot.</title>
+  <meta name="description"
+    content="RAFFLER brings Solana communities into one pool. Explore SOL raffles, connect your wallet, and build a pool for your people." />
+  <link rel="icon" type="image/png" href="./assets/logo-icon.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./phone.js" defer></script>
+  <script src="./raffler.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#raffles">Skip to raffles</a>
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="RAFFLER home"><img class="brand-logo" src="./assets/logo.png" width="228" height="76"
+        alt="RAFFLER — friendly yellow ticket logo" /></a>
+    <nav aria-label="Main navigation">
+      <a href="#raffles">Raffles</a><a href="#how-it-works">How it works</a><button class="text-button"
+        data-action="history">My entries</button>
+    </nav>
+    <button class="btn wallet-btn" data-action="wallet" id="wallet-button">
+      Connect wallet
+    </button>
+  </header>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#raffles">Raffles</a><a href="#how-it-works">How it works</a><button class="text-button"
+      data-action="history">My entries</button>
+  </nav>
+  <main id="home">
+    <section class="hero dot-grid">
+      <div class="hero-kicker">
+        <span class="mini-ticket" aria-hidden="true">R</span> YOUR COMMUNITY.
+        ONE POOL. ONE WINNER.
+      </div>
+      <h1>EVERY WALLET<br />HAS <span class="sticker pink">A SHOT.</span></h1>
+      <p>
+        A little SOL. A whole lot of possibility.<br />Bring your community
+        into one pool.
+      </p>
+      <div class="hero-actions">
+        <button class="btn primary" data-action="create">
+          Create a raffle <span aria-hidden="true">＋</span></button><a class="btn secondary" href="#raffles">Explore
+          raffles</a>
+      </div>
+      <small>One pool. Clear rules. Every entry counts.</small>
+      <span class="hero-label label-yellow">EVERY ENTRY COUNTS</span><span class="hero-label label-blue">BUILT FOR
+        SOLANA</span>
+    </section>
+    <div class="protocol-strip">
+      <span>CREATE <b>01</b></span><span>SHARE <b>02</b></span><span>ENTER <b>03</b></span><span>DRAW
+        <b>04</b></span><span>CHECK <b>05</b></span>
+    </div>
+    <section class="section gallery" id="raffles">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">FIND YOUR NEXT SHOT</div>
+          <h2>
+            Small entry.<br class="mobile-only" />
+            <span class="sticker yellow small-sticker">Big possibility.</span>
+          </h2>
+        </div>
+        <button class="btn secondary small" data-action="create">
+          Create raffle ＋
+        </button>
+      </div>
+      <p class="gallery-intro">
+        Community pots. Creator drops. Weekend pools. Find your kind of
+        raffle.
+      </p>
+      <div class="gallery-toolbar">
+        <div class="filters" aria-label="Raffle status filters">
+          <button class="filter active" data-filter="active" aria-pressed="true">
+            Active <span id="active-count">0</span></button><button class="filter" data-filter="ending"
+            aria-pressed="false">
+            Ending soon</button><button class="filter" data-filter="completed" aria-pressed="false">
+            Completed
+          </button>
+        </div>
+        <div class="search-sort">
+          <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search"
+              placeholder="Find a raffle…" aria-label="Search raffles" /></label><select id="sort"
+            aria-label="Sort raffles">
+            <option value="featured">Featured first</option>
+            <option value="ending">Time remaining</option>
+            <option value="price">Lowest entry</option>
+            <option value="entries">Most entries</option>
+          </select>
+        </div>
+      </div>
+      <div id="raffle-grid" class="raffle-grid" aria-live="polite"></div>
+      <div class="activity">
+        <span class="eyebrow">THE RAFFLER WAY</span><span id="activity-text">SOL pools. Clear entry prices. Odds you can
+          see.</span><button class="text-button" data-action="pause-activity" aria-pressed="false">
+          Pause
+        </button>
+      </div>
+    </section>
+    <section class="how-section dot-grid" id="how-it-works">
+      <div class="how-inner">
+        <div class="how-copy">
+          <div class="eyebrow">THE WHOLE JOURNEY</div>
+          <h2>
+            One link.<br /><span class="sticker yellow">Zero chaos.</span>
+          </h2>
+          <p class="section-intro">
+            From your first pool to the final receipt.
+          </p>
+          <div class="steps" role="group" aria-label="Product tour steps">
+            <button class="step selected" data-step="0" aria-pressed="true">
+              <b class="step-number yellow">1</b><span><strong>Create</strong><small>Name your raffle, set the
+                  rules, choose the prize.</small></span>
+            </button>
+            <button class="step" data-step="1" aria-pressed="false">
+              <b class="step-number blue">2</b><span><strong>Share the pool</strong><small>One raffle link for your
+                  whole community.</small></span>
+            </button>
+            <button class="step" data-step="2" aria-pressed="false">
+              <b class="step-number pink">3</b><span><strong>Take your shot</strong><small>Connect wallet. Choose
+                  entries. See your odds.</small></span>
+            </button>
+            <button class="step" data-step="3" aria-pressed="false">
+              <b class="step-number green">4</b><span><strong>Draw & check</strong><small>Reveal the winner and inspect
+                  the draw receipt.</small></span>
+            </button>
+          </div>
+          <div class="phone-controls" aria-label="Product tour playback">
+            <button type="button" id="phone-playback" aria-pressed="false">
+              Pause tour
+            </button>
+            <span id="phone-progress" aria-live="off">1 / 4</span>
+            <button type="button" id="phone-next">Next step →</button>
+          </div>
+          <p class="phone-note">
+            Explore the journey. Tap a step to see it in action.
+          </p>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone">
+            <div class="phone-camera"></div>
+            <div class="phone-top"><span>9:41</span><span>●●● ▰</span></div>
+            <div id="phone-screen"></div>
+            <div class="phone-home"></div>
+          </div>
+          <span class="phone-sticker yellow">ONE POOL.<br />ONE WINNER.</span>
+        </div>
+      </div>
+    </section>
+    <section class="section past" id="past-draws">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">THE RECEIPTS ARE THE POINT</div>
+          <h2>
+            Drawn.
+            <span class="sticker green small-sticker">Done. Recorded.</span>
+          </h2>
+        </div>
+        
+      </div>
+      <p class="section-intro">
+        The result deserves more than a screenshot. Explore the details in
+        each receipt.
+      </p>
+      <div id="past-list" class="past-list"></div>
+    </section>
+    <section class="builders-section" id="builders">
+      <div class="builders-inner">
+        <div>
+          <div class="eyebrow">MADE FOR YOUR PEOPLE</div>
+          <h2>
+            Small communities.<br /><span class="text-yellow">Big pool energy.</span>
+          </h2>
+          <p>
+            A creator drop. A weekend gathering. A thank-you to the people who
+            show up. Give your community something to rally around.
+          </p>
+          <p class="muted-light">
+            Choose the SOL prize, set the entry price, and make the rules easy
+            to understand.
+          </p>
+          <button class="btn primary" data-action="create">
+            Build your pool ＋
+          </button>
+        </div>
+        <div class="community-board">
+          <div class="community-board-heading">
+            <span>ONE POOL. YOUR PEOPLE.</span><span>◎ SOL</span>
+          </div>
+          <div class="community-use">
+            <span class="community-number yellow">01</span>
+            <div>
+              <h3>For creators</h3>
+              <p>Give your next drop a little more possibility.</p>
+            </div>
+          </div>
+          <div class="community-use">
+            <span class="community-number pink">02</span>
+            <div>
+              <h3>For communities</h3>
+              <p>A shared moment for the wallets that show up.</p>
+            </div>
+          </div>
+          <div class="community-use">
+            <span class="community-number green">03</span>
+            <div>
+              <h3>For your next big idea</h3>
+              <p>One clear prize. One set of rules. One place to start.</p>
+            </div>
+          </div>
+          <div class="community-board-bottom">
+            LESS CHAOS. MORE POSSIBILITY. ↗
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section faq">
+      <div>
+        <div class="eyebrow">A FEW GOOD QUESTIONS</div>
+        <h2>Before you<br />take a shot.</h2>
+        <img class="faq-mascot" src="./assets/mascot-magic.png" width="160" height="160" alt="Yellow ticket mascot" />
+      </div>
+      <div class="faq-items">
+        <details>
+          <summary>Which wallets can I connect?</summary>
+          <p>
+            RAFFLER discovers installed Solana wallets through Wallet
+            Standard. Choose your wallet from the picker and approve the
+            connection in your wallet app.
+          </p>
+        </details>
+        <details>
+          <summary>How are my odds calculated?</summary>
+          <p>
+            Your entries divided by the total accepted entries. Before you
+            enter, the estimate includes the entries you are about to add.
+            Your final odds can change as more people enter.
+          </p>
+        </details>
+        <details>
+          <summary>What can I find in a receipt?</summary>
+          <p>
+            The selected wallet, winning entry, total entries, draw time, and
+            reference. Open a receipt to explore its details, or
+            download a copy.
+          </p>
+        </details>
+        <details>
+          <summary>Where are my entries saved?</summary>
+          <p>
+            In this browser, organized by wallet address. Refreshing preserves
+            them, but switching devices does not. Export a backup from My
+            entries to move your history.
+          </p>
+        </details>
+        <details>
+          <summary>What does connecting my wallet allow?</summary>
+          <p>
+            Your wallet shares its public Solana address. RAFFLER can read its
+            SOL balance through your selected RPC. You stay in control of your
+            wallet.
+          </p>
+        </details>
+      </div>
+    </section>
+    <section class="final-cta dot-grid">
+      <div class="eyebrow">BRING THE GROUP CHAT</div>
+      <h2>
+        Your people.<br /><span class="sticker pink">Your next pool.</span>
+      </h2>
+      <p>Give everyone something to show up for.</p>
+      <div class="hero-actions">
+        <button class="btn primary" data-action="create">
+          Create your pool ＋</button><a class="btn secondary" href="#raffles">Find a pool ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <a class="brand" href="#home" aria-label="RAFFLER home"><img class="brand-logo" src="./assets/logo.png" width="228" height="76"
+        alt="RAFFLER — friendly yellow ticket logo" /></a>
+    <p>Your community. One pool. One winner.</p>
+    <p class="site-note">Showcase build: pools and draws shown are sample data, and no SOL is deposited or paid out.</p>
+    <div>
+      <a href="#builders">For communities</a><button class="text-button" data-action="settings">RPC
+        settings</button><button class="text-button" data-action="about">How draws work</button>
+    </div>
+  </footer>
+  <dialog id="modal" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <span class="eyebrow" id="modal-kicker">RAFFLER</span><button class="close-button" data-action="close"
+        aria-label="Close dialog">
+        ×
+      </button>
+    </div>
+    <div id="modal-content"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript>
+    <div class="noscript">
+      Enable JavaScript to use raffles and connect your Solana wallet. No
+      wallet is needed to read the information on this page.
+    </div>
+  </noscript>
+</body>
+
+</html>
